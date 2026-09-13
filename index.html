@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Physiotherapy care, movement support, and appointment booking with KS Physio.">
+    <title>KS Physio | Physiotherapy &amp; Movement Care</title>
+    <link rel="stylesheet" type="text/css" href="styles/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#about">KS Physio</a>
+            <nav aria-label="Main navigation">
+                <a href="#services">Services</a>
+                <a href="#booking-section">Book a visit</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-section" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="row about-layout">
+                    <div class="five columns about-image-wrap">
+                        <div class="profile-frame">
+                            <img class="profile-image" src="assets/profile.jpeg" alt="Portrait of your physiotherapist">
+                        </div>
+                    </div>
+                    <div class="seven columns about-copy">
+                        <p class="eyebrow">Physiotherapy &amp; movement care</p>
+                        <h1 id="about-heading">Move with more confidence.</h1>
+                        <p class="intro-text">I’m <strong>Komal</strong>, a physiotherapist helping people feel
+                            stronger, move freely, and return to the activities that matter to them.</p>
+                        <p>My approach is practical and personal: we understand what is holding you back, build a clear
+                            plan together, and make progress one step at a time.</p>
+                        <a class="text-link" href="#booking-section">Start your recovery <span
+                                aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">How I can help</p>
+                    <h2 id="services-heading">Services</h2>
+                </div>
+                <ul class="services-list">
+                    <li><span class="service-number">01</span><strong>Evidence-based practice</strong><span>Find
+                            practical ways to move well.</span></li>
+                    <li><span class="service-number">02</span><strong>Pre- and Post-operative
+                            rehabilitation</strong><span>Build back strength with confidence.</span></li>
+                    <li><span class="service-number">03</span><strong>Pain management</strong><span>Understand the cause
+                            and next steps.</span></li>
+                    <li><span class="service-number">04</span><strong>Personalised rehabilitation
+                            program</strong><span>Train for a stronger everyday.</span></li>
+                    <li><span class="service-number">05</span><strong>Kinesiology taping</strong><span>A little aid for
+                            your sport.</span></li>
+                    <li><span class="service-number">06</span><strong>Sports massage</strong><span>Return to your sport
+                            safely.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="appointment-section" id="booking-section" aria-labelledby="appointment-heading">
+            <div class="container">
+                <div class="booking-heading">
+                    <p class="eyebrow">Take the next step</p>
+                    <h2 id="appointment-heading">Book an appointment</h2>
+                    <p>Choose a time that works for you and book your visit through the calendar below.</p>
+                </div>
+                <div id="my-cal-inline" class="cal-inline"></div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            (function (C, A, L) {
+                let p = function (a, ar) { a.q.push(ar); };
+                let d = C.document;
+                C.Cal = C.Cal || function () {
+                    let cal = C.Cal;
+                    let ar = arguments;
+                    if (!cal.loaded) {
+                        cal.ns = {};
+                        cal.q = cal.q || [];
+                        d.head.appendChild(d.createElement("script")).src = "https://app.cal.com/embed/embed.js";
+                        cal.loaded = true;
+                    }
+                    if (ar[0] === L) {
+                        const api = function () { p(api, arguments); };
+                        const namespace = ar[1];
+                        api.q = api.q || [];
+                        if (typeof namespace === "string") {
+                            cal.ns[namespace] = cal.ns[namespace] || api;
+                            p(cal.ns[namespace], ar);
+                            p(cal, ["initNamespace", namespace]);
+                        } else p(cal, ar);
+                        return;
+                    }
+                    p(cal, ar);
+                };
+            })(window, "https://app.cal.com/embed/embed.js", "init");
+
+            Cal("init", { origin: "https://cal.com" });
+
+            Cal("inline", {
+                elementOrSelector: "#my-cal-inline",
+                calLink: "ksphysio/1hrconsult",
+                layout: "month_view"
+            });
+
+            Cal("ui", {
+                cssVarsPerTheme: {
+                    light: { "cal-brand": "#292929" },
+                    dark: { "cal-brand": "#fafafa" }
+                },
+                hideEventTypeDetails: false,
+                layout: "month_view"
+            });
+        </script>
+    </main>
+</body>
+
+</html>
